@@ -1,27 +1,10 @@
 public class GameWindow {
 
     public GameWindow(){
-
+ TileGenerator t = new TileGenerator();
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
