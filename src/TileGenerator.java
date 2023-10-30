@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Objects;
 
 public class TileGenerator extends JFrame implements ActionListener {
 
@@ -14,6 +15,7 @@ public class TileGenerator extends JFrame implements ActionListener {
     JPanel game = new JPanel();
     JPanel bottom = new JPanel();
     ArrayList<JLabel> labelList = new ArrayList<>();
+    ArrayList<JLabel> newList = new ArrayList<>();
 
     public TileGenerator() {
         labelList.add(new JLabel("1"));
@@ -33,9 +35,11 @@ public class TileGenerator extends JFrame implements ActionListener {
         labelList.add(new JLabel("15"));
         labelList.add(new JLabel(" "));
 
-        game.setLayout(new GridLayout(4, 4));
-        setLabels(labelList);
 
+        game.setLayout(new GridLayout(4, 4));
+        newList=setLabels(labelList);
+
+        victory(labelList, labelList);
 
         top.add(newGame);
         newGame.addActionListener(this);
@@ -56,8 +60,9 @@ public class TileGenerator extends JFrame implements ActionListener {
 
 
     // metod som tar in och blandar alla labels och sätter ut dom
-    public void setLabels(ArrayList<JLabel> list) {
+    public ArrayList<JLabel> setLabels(ArrayList<JLabel> list) {
         Collections.shuffle(list);
+        ArrayList<JLabel> newList = new ArrayList<>();
         for (JLabel j : list) {
             j.setFont(new Font("Verdana", Font.PLAIN, 15));
             j.setPreferredSize(new Dimension(50, 50));
@@ -67,7 +72,33 @@ public class TileGenerator extends JFrame implements ActionListener {
             j.setBackground(Color.cyan);
             j.setBorder(BorderFactory.createLineBorder(Color.black));
             game.add(j);
+            newList.add(j);
         }
+        return  newList;
+    }
+
+    // metod som tar in två listor, både orginalet i rätt ordning och den nya vi gör. Om båda överensstämmer så skrivs meddelandet ut.
+    public void victory(ArrayList<JLabel> labelList, ArrayList<JLabel> newList) {
+        int counter = 0;
+        int noOfRightPlaces = 0;
+        for (JLabel j: newList) {
+            if (Objects.equals(j.getText(), labelList.get(counter).getText())){
+                counter++;
+            noOfRightPlaces++;
+            }
+        }
+        if (noOfRightPlaces == 16){
+            message.setText("Grattis, du vann!");
+        }
+/*        if (Objects.equals(list.get(0).getText(), "1") && Objects.equals(list.get(1).getText(), "2") && Objects.equals(list.get(2).getText(), "3")
+                && Objects.equals(list.get(3).getText(), "4") && Objects.equals(list.get(4).getText(), "5") && Objects.equals(list.get(5).getText(), "6")
+                && Objects.equals(list.get(6).getText(), "7") && Objects.equals(list.get(7).getText(), "8") && Objects.equals(list.get(8).getText(), "9")
+                && Objects.equals(list.get(9).getText(), "10") && Objects.equals(list.get(10).getText(), "11") && Objects.equals(list.get(11).getText(), "12")
+                && Objects.equals(list.get(12).getText(), "13") && Objects.equals(list.get(13).getText(), "14") && Objects.equals(list.get(14).getText(), "15")
+                && Objects.equals(list.get(15).getText(), " ")) {
+            message.setText("Grattis, du vann!");
+        }*/
+
     }
 
     @Override
