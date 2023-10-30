@@ -1,6 +1,8 @@
 public class GameWindow {
 
     public GameWindow(){
+ TileGenerator t = new TileGenerator();
+
 
     }
 
@@ -17,13 +19,8 @@ public class GameWindow {
 
 
 
+
     //Testa pusha min dev branch
-
-
-
-
-
-
 
     public static void main(String[] args) {
         new GameWindow();
