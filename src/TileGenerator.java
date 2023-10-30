@@ -13,10 +13,9 @@ public class TileGenerator extends JFrame implements ActionListener {
     JPanel top = new JPanel();
     JPanel game = new JPanel();
     JPanel bottom = new JPanel();
+    ArrayList<JLabel> labelList = new ArrayList<>();
 
-
-    public TileGenerator(){
-        ArrayList<JLabel> labelList = new ArrayList<>();
+    public TileGenerator() {
         labelList.add(new JLabel("1"));
         labelList.add(new JLabel("2"));
         labelList.add(new JLabel("3"));
@@ -32,43 +31,48 @@ public class TileGenerator extends JFrame implements ActionListener {
         labelList.add(new JLabel("13"));
         labelList.add(new JLabel("14"));
         labelList.add(new JLabel("15"));
-        labelList.add(new JLabel("null"));
+        labelList.add(new JLabel(" "));
 
-            game.setLayout(new GridLayout(4, 4));
-            setLabels(labelList);
+        game.setLayout(new GridLayout(4, 4));
+        setLabels(labelList);
 
 
-            top.add(newGame);
-            newGame.addActionListener(this);
+        top.add(newGame);
+        newGame.addActionListener(this);
 
-            bottom.add(message);
+        bottom.add(message);
 
-            setLayout(new GridLayout(3,1));
-            add(top);
-            add(game);
-            add(bottom);
+        setLayout(new BorderLayout());
+        add(top, BorderLayout.NORTH);
+        add(game, BorderLayout.CENTER);
+        add(bottom, BorderLayout.SOUTH);
 
-            pack();
-            setVisible(true);
-            setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        setSize(400, 400);
+        setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+    }
+
+
+    // metod som tar in och blandar alla labels och sätter ut dom
+    public void setLabels(ArrayList<JLabel> list) {
+        Collections.shuffle(list);
+        for (JLabel j : list) {
+            j.setFont(new Font("Verdana", Font.PLAIN, 15));
+            j.setPreferredSize(new Dimension(50, 50));
+            j.setHorizontalAlignment(SwingConstants.CENTER);
+            j.setVerticalAlignment(SwingConstants.CENTER);
+            j.setOpaque(true);
+            j.setBackground(Color.cyan);
+            j.setBorder(BorderFactory.createLineBorder(Color.black));
+            game.add(j);
         }
-
-        // metod som tar in och blandar alla labels och sätter ut dom
-        public void setLabels (ArrayList<JLabel> list){
-            Collections.shuffle(list);
-            for (JLabel j: list) {
-                j.setFont(new Font("Verdana", Font.PLAIN, 15));
-                j.setPreferredSize(new Dimension(50,50));
-                j.setHorizontalAlignment(SwingConstants.CENTER);
-                j.setVerticalAlignment(SwingConstants.CENTER);
-                j.setBorder(BorderFactory.createLineBorder(Color.black));
-                game.add(j);
-            }
-        }
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        setLabels(labelList);
     }
 }
 
