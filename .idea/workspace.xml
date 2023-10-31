@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f965e59a-5249-4af0-8264-24ef48f8b7dc" name="Changes" comment="ny metod att kontrollera om platserna är rätt">
-      <change beforePath="$PROJECT_DIR$/.idea/GameOf15.iml" beforeDir="false" />
+    <list default="true" id="f965e59a-5249-4af0-8264-24ef48f8b7dc" name="Changes" comment="Metod för att göra Jlabel till lista">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="master" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -33,8 +37,10 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "20",
     "last_opened_file_path": "C:/Users/jessi/Documents/Java Program/GameOf15",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -43,10 +49,15 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "preferences.general",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.GameWindow">
     <configuration name="GameWindow (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GameWindow" />
@@ -61,8 +72,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GameWindow (1)" />
         <item itemvalue="Application.GameWindow" />
         <item itemvalue="Application.GameWindow (1)" />
         <item itemvalue="Application.GameWindow" />
@@ -82,6 +105,8 @@
       <workItem from="1698681323323" duration="63000" />
       <workItem from="1698683488085" duration="153000" />
       <workItem from="1698736492753" duration="2062000" />
+      <workItem from="1698747142758" duration="5893000" />
+      <workItem from="1698753054192" duration="4023000" />
     </task>
     <task id="LOCAL−00001" summary="ny metod att kontrollera om platserna är rätt">
       <option name="closed" value="true" />
@@ -90,7 +115,14 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1698681371847</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL−00002" summary="Metod för att göra Jlabel till lista">
+      <option name="closed" value="true" />
+      <created>1698757440120</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1698757440120</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,6 +130,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ny metod att kontrollera om platserna är rätt" />
-    <option name="LAST_COMMIT_MESSAGE" value="ny metod att kontrollera om platserna är rätt" />
+    <MESSAGE value="commitar för att merga" />
+    <MESSAGE value="Metod för att göra Jlabel till lista" />
+    <option name="LAST_COMMIT_MESSAGE" value="Metod för att göra Jlabel till lista" />
   </component>
 </project>
