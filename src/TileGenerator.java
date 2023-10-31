@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Objects;
 
 public class TileGenerator extends JFrame implements ActionListener {
 
@@ -14,10 +15,11 @@ public class TileGenerator extends JFrame implements ActionListener {
     JPanel game = new JPanel();
     JPanel bottom = new JPanel();
     ArrayList<JLabel> labelList = new ArrayList<>();
+    ArrayList<JLabel> labelList2 = new ArrayList<>();
 
     public static Border standardBorder = BorderFactory.createLineBorder(Color.black);
 
-    ArrayList<JLabel> labelList2 = new ArrayList<>();
+
     public TileGenerator() {
         labelList.add(new JLabel("1"));
         labelList.add(new JLabel("2"));
