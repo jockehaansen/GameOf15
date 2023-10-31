@@ -52,6 +52,8 @@ public class TileGenerator extends JFrame implements ActionListener {
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+        //För att läsa av posX, posY
+        setResizable(false);
     }
 
 
@@ -67,6 +69,8 @@ public class TileGenerator extends JFrame implements ActionListener {
             j.setBackground(Color.cyan);
             j.setBorder(BorderFactory.createLineBorder(Color.black));
             game.add(j);
+
+            j.addMouseListener(new EventHandler(j,game));
         }
     }
 
