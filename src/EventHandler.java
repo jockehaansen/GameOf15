@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class EventHandler implements MouseListener {
 
 
+
     JLabel l;
     JButton btn;
     Component c2, c3,c4,c5;

@@ -8,6 +8,7 @@ import java.util.Objects;
 
 public class TileGenerator extends JFrame implements ActionListener {
 
+
     JButton newGame = new JButton("Nytt spel");
     JLabel message = new JLabel(" ");
     JPanel top = new JPanel();
