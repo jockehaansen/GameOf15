@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 
 public class EventHandler implements MouseListener {
 
@@ -17,6 +18,8 @@ public class EventHandler implements MouseListener {
 
     Point l2tempPoint,l3tempPoint,l4tempPoint,l5tempPoint;
     int lx, ly;
+
+
 
     public EventHandler(JLabel l, JPanel jp){
         this.l = l;
