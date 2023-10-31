@@ -2,8 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 
 public class EventHandler implements MouseListener {
+
 
     JLabel l;
     JButton btn;
@@ -17,6 +19,7 @@ public class EventHandler implements MouseListener {
 
     Point l2tempPoint,l3tempPoint,l4tempPoint,l5tempPoint;
     int lx, ly;
+
 
     public EventHandler(JLabel l, JPanel jp){
         this.l = l;
@@ -44,6 +47,7 @@ public class EventHandler implements MouseListener {
     //Sedan castar vi om dessa komponenter till labels så vi kan använda oss utav JLabels metoder som te.x getText()
     @Override
     public void mouseClicked(MouseEvent e) {
+
         lx = l.getLocation().x;
         ly = l.getLocation().y;
 
@@ -83,9 +87,6 @@ public class EventHandler implements MouseListener {
                 l5.setText(l.getText());
                 l.setText(" ");
             }
-
-
-
             // Implementera denna metod
             // hasPlayerWon();
         }
