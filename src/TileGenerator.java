@@ -134,5 +134,6 @@ public class TileGenerator extends JFrame implements ActionListener {
             j.addMouseListener(new EventHandler(j,game));
         }
     }
+
 }
 
