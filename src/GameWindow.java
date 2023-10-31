@@ -5,11 +5,6 @@ public class GameWindow {
         t.hasPlayerWon(t.testList(t.game));
     }
 
-
-
-
-
-
     public static void main(String[] args) {
         new GameWindow();
     }

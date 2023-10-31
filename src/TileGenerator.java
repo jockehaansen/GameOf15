@@ -1,13 +1,12 @@
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Objects;
 
 public class TileGenerator extends JFrame implements ActionListener {
-
 
     JButton newGame = new JButton("Nytt spel");
     JLabel message = new JLabel(" ");
@@ -15,6 +14,9 @@ public class TileGenerator extends JFrame implements ActionListener {
     JPanel game = new JPanel();
     JPanel bottom = new JPanel();
     ArrayList<JLabel> labelList = new ArrayList<>();
+
+    public static Border standardBorder = BorderFactory.createLineBorder(Color.black);
+
     ArrayList<JLabel> labelList2 = new ArrayList<>();
     public TileGenerator() {
         labelList.add(new JLabel("1"));
@@ -52,11 +54,12 @@ public class TileGenerator extends JFrame implements ActionListener {
         labelList2.add(new JLabel("15"));
 
         game.setLayout(new GridLayout(4, 4));
-        setLabelsCheat(labelList2); // här använder vi fuskmetoden att sätta brickor
-        //setLabels(labelList);
+        setLabels(labelList);
+
 
         top.add(newGame);
         newGame.addActionListener(this);
+        newGame.setFocusable(false);
 
         bottom.add(message);
 
@@ -65,7 +68,7 @@ public class TileGenerator extends JFrame implements ActionListener {
         add(game, BorderLayout.CENTER);
         add(bottom, BorderLayout.SOUTH);
 
-
+        setTitle("Game of 15");
         setSize(400, 400);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -93,7 +96,7 @@ public class TileGenerator extends JFrame implements ActionListener {
             j.setVerticalAlignment(SwingConstants.CENTER);
             j.setOpaque(true);
             j.setBackground(Color.cyan);
-            j.setBorder(BorderFactory.createLineBorder(Color.black));
+            j.setBorder(standardBorder);
             game.add(j);
 
             j.addMouseListener(new EventHandler(j,game));

@@ -1,12 +1,11 @@
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 public class EventHandler implements MouseListener {
-
-
 
     JLabel l;
     JButton btn;
@@ -20,6 +19,7 @@ public class EventHandler implements MouseListener {
 
     Point l2tempPoint,l3tempPoint,l4tempPoint,l5tempPoint;
     int lx, ly;
+
 
 
     public EventHandler(JLabel l, JPanel jp){
@@ -48,7 +48,6 @@ public class EventHandler implements MouseListener {
     //Sedan castar vi om dessa komponenter till labels så vi kan använda oss utav JLabels metoder som te.x getText()
     @Override
     public void mouseClicked(MouseEvent e) {
-
         lx = l.getLocation().x;
         ly = l.getLocation().y;
 
@@ -88,6 +87,9 @@ public class EventHandler implements MouseListener {
                 l5.setText(l.getText());
                 l.setText(" ");
             }
+
+
+
             // Implementera denna metod
             // hasPlayerWon();
         }
@@ -103,15 +105,16 @@ public class EventHandler implements MouseListener {
 
     }
 
+    //Highlightar den label man har musen över med en ny border
     @Override
     public void mouseEntered(MouseEvent e) {
-        //Eventuell kod för att highlighta den brickan man har musen på med att sätta bordern till en viss färg
-        //Måste tas bort igen i MouseExited isåfall
+        Border highlight = BorderFactory.createLineBorder(Color.GRAY);
+        l.setBorder(highlight);
     }
-
+    //Tar bort highlighten och sätter tillbaka standard border
     @Override
     public void mouseExited(MouseEvent e) {
-
+        l.setBorder(TileGenerator.standardBorder);
     }
 }
 
