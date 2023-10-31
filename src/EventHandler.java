@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -104,15 +105,16 @@ public class EventHandler implements MouseListener {
 
     }
 
+    //Highlightar den label man har musen över med en ny border
     @Override
     public void mouseEntered(MouseEvent e) {
-        //Eventuell kod för att highlighta den brickan man har musen på med att sätta bordern till en viss färg
-        //Måste tas bort igen i MouseExited isåfall
+        Border highlight = BorderFactory.createLineBorder(Color.GRAY);
+        l.setBorder(highlight);
     }
-
+    //Tar bort highlighten och sätter tillbaka standard border
     @Override
     public void mouseExited(MouseEvent e) {
-
+        l.setBorder(TileGenerator.standardBorder);
     }
 }
 

@@ -15,6 +15,8 @@ public class TileGenerator extends JFrame implements ActionListener {
     JPanel bottom = new JPanel();
     ArrayList<JLabel> labelList = new ArrayList<>();
 
+    public static Border standardBorder = BorderFactory.createLineBorder(Color.black);
+
     public TileGenerator() {
         labelList.add(new JLabel("1"));
         labelList.add(new JLabel("2"));
@@ -39,6 +41,7 @@ public class TileGenerator extends JFrame implements ActionListener {
 
         top.add(newGame);
         newGame.addActionListener(this);
+        newGame.setFocusable(false);
 
         bottom.add(message);
 
@@ -47,7 +50,7 @@ public class TileGenerator extends JFrame implements ActionListener {
         add(game, BorderLayout.CENTER);
         add(bottom, BorderLayout.SOUTH);
 
-
+        setTitle("Game of 15");
         setSize(400, 400);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -67,7 +70,7 @@ public class TileGenerator extends JFrame implements ActionListener {
             j.setVerticalAlignment(SwingConstants.CENTER);
             j.setOpaque(true);
             j.setBackground(Color.cyan);
-            j.setBorder(BorderFactory.createLineBorder(Color.black));
+            j.setBorder(standardBorder);
             game.add(j);
 
             j.addMouseListener(new EventHandler(j,game));
