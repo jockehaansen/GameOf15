@@ -29,6 +29,7 @@ public class EventHandler implements MouseListener {
         this.btn = btn;
     }
 
+    //Kollar om x & y inte över- & underskrider våran spelplan, och kollar om labels innehåller text
     private boolean IsLabelInViewAndValid(JLabel label){
         if (label.getLocation().y < 1 || label.getLocation().y > 223 || label.getLocation().x < 0 || label.getLocation().x > 288) {
             return false;
@@ -38,17 +39,14 @@ public class EventHandler implements MouseListener {
     }
 
 
-
-
-
+    //Lagrar x & y pos på den label vi klickar på
+    //Sedan skapar vi upp fyra nya Points, och letar sedan på våran panel efter komponenterna på dessa points
+    //Sedan castar vi om dessa komponenter till labels så vi kan använda oss utav JLabels metoder som te.x getText()
     @Override
     public void mouseClicked(MouseEvent e) {
-        //Eventuellt flytta ut detta till en getLabelLocations metod
         lx = l.getLocation().x;
         ly = l.getLocation().y;
 
-
-        //TODO kör kontroller på att de inte är out-of-bounds innan vi sätter punkter och castar om
         l2tempPoint = new Point(lx,ly-74);
         if (l2tempPoint.getLocation().y >= 1) {
             c2 = jp.getComponentAt(l2tempPoint);
@@ -72,43 +70,6 @@ public class EventHandler implements MouseListener {
             c5 = jp.getComponentAt(l5tempPoint);
             l5 = (JLabel) c5;
         }
-
-
-        if (l.getText().isBlank()) {
-            System.out.println("klickade på en tom label");
-            System.out.println("l location" + l.getLocation());
-            System.out.println("l2temp" + l2tempPoint);
-            System.out.println(l2.getText());
-            System.out.println("----------");
-            System.out.println("l3temp" + l3tempPoint);
-            System.out.println(l3.getText());
-            System.out.println("----------");
-            System.out.println("l4temp" + l4tempPoint);
-            System.out.println(l4.getText());
-            System.out.println("----------");
-            System.out.println("l5temp" + l5tempPoint);
-            System.out.println(l5.getText());
-            System.out.println("----------");
-
-        } else {
-            System.out.println("Klickade på en fylld label");
-            System.out.println("l location" + l.getLocation());
-            System.out.println("l2temp" + l2tempPoint);
-            System.out.println(l2.getText());
-            System.out.println("----------");
-            System.out.println("l3temp" + l3tempPoint);
-            System.out.println(l3.getText());
-            System.out.println("----------");
-            System.out.println("l4temp" + l4tempPoint);
-            System.out.println(l4.getText());
-            System.out.println("----------");
-            System.out.println("l5temp" + l5tempPoint);
-            System.out.println(l5.getText());
-            System.out.println("----------");
-
-        }
-
-
             if (IsLabelInViewAndValid(l2)) {
                 l2.setText(l.getText());
                 l.setText(" ");
