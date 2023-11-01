@@ -1,9 +1,11 @@
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class EventHandler implements MouseListener {
 
@@ -11,6 +13,8 @@ public class EventHandler implements MouseListener {
     JButton btn;
     Component c2, c3,c4,c5;
     JPanel jp;
+    JLabel message;
+    ArrayList<JLabel> tileList;
 
     JLabel l2 = new JLabel();
     JLabel l3 = new JLabel();
@@ -20,17 +24,32 @@ public class EventHandler implements MouseListener {
     Point l2tempPoint,l3tempPoint,l4tempPoint,l5tempPoint;
     int lx, ly;
 
-
-
-    public EventHandler(JLabel l, JPanel jp){
+    public EventHandler(JLabel l, JPanel jp, JLabel message, ArrayList<JLabel> tileList){
         this.l = l;
         this.jp = jp;
+        this.message = message;
+        this.tileList = tileList;
     }
-
 
     //Eventhantering för nytt spel och auto-win knappen
     public EventHandler(JButton btn) {
         this.btn = btn;
+    }
+
+    public void hasPlayerWon(ArrayList<JLabel> list){
+        if (Objects.equals(list.get(0).getText(), "1") && Objects.equals(list.get(1).getText(), "2") && Objects.equals(list.get(2).getText(), "3")
+                && Objects.equals(list.get(3).getText(), "4") && Objects.equals(list.get(4).getText(), "5") && Objects.equals(list.get(5).getText(), "6")
+                && Objects.equals(list.get(6).getText(), "7") && Objects.equals(list.get(7).getText(), "8") && Objects.equals(list.get(8).getText(), "9")
+                && Objects.equals(list.get(9).getText(), "10") && Objects.equals(list.get(10).getText(), "11") && Objects.equals(list.get(11).getText(), "12")
+                && Objects.equals(list.get(12).getText(), "13") && Objects.equals(list.get(13).getText(), "14") && Objects.equals(list.get(14).getText(), "15")
+                && Objects.equals(list.get(15).getText(), " ")) {
+            message.setText("Grattis, du vann!");
+
+            for (JLabel l: list
+                 ) {
+                l.setBackground(Color.green);
+            }
+        }
     }
 
     //Kollar om x & y inte över- & underskrider våran spelplan, och kollar om labels innehåller text
@@ -88,10 +107,8 @@ public class EventHandler implements MouseListener {
                 l.setText(" ");
             }
 
-
-
-            // Implementera denna metod
-            // hasPlayerWon();
+            //Kollar om spelaren vunnit efter varje drag
+            hasPlayerWon(tileList);
         }
 
 
