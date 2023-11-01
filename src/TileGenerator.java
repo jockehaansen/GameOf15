@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Objects;
 
 public class TileGenerator extends JFrame implements ActionListener {
 
@@ -15,7 +14,6 @@ public class TileGenerator extends JFrame implements ActionListener {
     JPanel game = new JPanel();
     JPanel bottom = new JPanel();
     ArrayList<JLabel> labelList = new ArrayList<>();
-    ArrayList<JLabel> labelList2 = new ArrayList<>();
 
     public static Border standardBorder = BorderFactory.createLineBorder(Color.black);
 
@@ -66,15 +64,6 @@ public class TileGenerator extends JFrame implements ActionListener {
         setResizable(false);
     }
 
-    // metod som tar alla JLabel och gör dom till en lista, som vi sedan skickar in och kollar av i hasPlayerWon metoden
-    public ArrayList<JLabel> testList (JPanel game){
-        ArrayList<JLabel> test = new ArrayList<>();
-        for (Component j: game.getComponents()) {
-            test.add((JLabel) j);
-        }
-        return test;
-    }
-
     // metod som tar in och blandar alla labels och sätter ut dom
     public void setLabels (ArrayList<JLabel> list) {
         Collections.shuffle(list);
@@ -97,8 +86,8 @@ public class TileGenerator extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         //setLabels(labelList);
         setLabelsCheat(labelList);
+        message.setText(" ");
     }
-
 
     // fuskmetod med bara en bricka att flytta
     public void setLabelsCheat(ArrayList<JLabel> list) {
@@ -114,6 +103,5 @@ public class TileGenerator extends JFrame implements ActionListener {
             j.addMouseListener(new EventHandler(j,game,message,list));
         }
     }
-
 }
 
